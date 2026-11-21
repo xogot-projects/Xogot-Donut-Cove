@@ -35,7 +35,7 @@ func _ready() -> void:
 	Audio.mute_changed.connect(func(_muted: bool) -> void: _refresh())
 
 
-func _unhandled_key_input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_action_pressed(&"pause"):
 		return
 	var game: Game = get_tree().get_first_node_in_group(&"game") as Game
